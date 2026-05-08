@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NHL Roster Tool</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+	<div class="ambient ambient-one"></div>
+	<div class="ambient ambient-two"></div>
+
+	<main class="shell">
+
+		<section class="hero card">
+			<div class="eyebrow">NHL Roster Tool</div>
+
+			<div class="hero-copy">
+				<h1>Search a player and explore roster data.</h1>
+				<p>Type a player name to view position, jersey number, height, weight, and shooting side.</p>
+			</div>
+
+			<div class="search-panel">
+
+				<div id="searchAvatarWrap" class="search-avatar-wrap placeholder">
+					<img id="searchPlayerAvatar" class="search-avatar" alt="Player preview">
+				</div>
+
+				<div class="search-field-wrap">
+					<label class="field-label" for="playerSearch">Player name</label>
+
+					<input
+						id="playerSearch"
+						class="search-input"
+						type="text"
+						placeholder="Type a player name"
+						autocomplete="off"
+						spellcheck="false"
+					>
+
+					<div id="suggestionList" class="suggestions" hidden></div>
+				</div>
+
+				<button id="clearPlayer" class="ghost-button" type="button">
+					Clear
+				</button>
+
+			</div>
+		</section>
+
+
+		<section id="resultsSection" class="results-grid" hidden>
+
+			<article class="card selected-card">
+
+				<div class="selected-header">
+
+					<div id="selectedAvatarWrap" class="selected-avatar-wrap placeholder">
+						<img id="selectedPlayerAvatar" class="selected-avatar" alt="Selected player">
+					</div>
+
+					<div>
+						<div class="section-label">Selected player</div>
+						<h2 id="selectedPlayerName">Choose a player</h2>
+						<p id="selectedPlayerMeta" class="muted">
+							Select a player to load roster details.
+						</p>
+					</div>
+
+				</div>
+
+				<div id="playerList" class="role-list"></div>
+
+			</article>
+
+
+			<article class="card detail-card">
+
+				<div class="section-label">Player details</div>
+
+				<div id="detailPanel" class="detail-panel">
+					<p class="empty-state">
+						Select a player to view roster information.
+					</p>
+				</div>
+
+			</article>
+
+		</section>
+
+	</main>
+
+	<script src="/script.js" defer></script>
+
+</body>
+</html>
